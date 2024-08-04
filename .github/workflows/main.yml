@@ -64,7 +64,7 @@ jobs:
         if: matrix.python-version == '3.11'
 
       - name: Upload coverage data
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: coverage-data
           path: ".coverage.*"
@@ -100,7 +100,7 @@ jobs:
           # Report again and fail if under 98%.
           python -Im coverage report --fail-under=98
       - name: Upload HTML report if check failed.
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: html-report
           path: htmlcov
